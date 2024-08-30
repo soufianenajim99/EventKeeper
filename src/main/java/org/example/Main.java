@@ -92,8 +92,7 @@ public class Main {
                                 System.out.println("*************liste des événements **************");
                                 for (Event eve : events) {
 
-                                        System.out.println(eve.getName());
-
+                                        System.out.println("***********"+eve.getName());
 
                                 };
                                 break;
