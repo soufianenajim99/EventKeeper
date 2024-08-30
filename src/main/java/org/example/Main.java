@@ -90,11 +90,15 @@ public class Main {
                                 break;
                             case "4" :
                                 System.out.println("*************liste des événements **************");
+
                                 for (Event eve : events) {
-
                                         System.out.println("***********"+eve.getName());
-
                                 };
+                                int EventMood;
+                                do {
+                                    System.out.println("11) Retour : ");
+                                    EventMood=myObj.nextInt();
+                                }while(EventMood != 11);
                                 break;
                              case "5" :
                                 System.out.println("Rechercher des événements par critère (date, lieu, type) : ");
