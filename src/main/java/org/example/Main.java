@@ -82,10 +82,20 @@ public class Main {
                                 System.out.println("************* evenement Modifier Avec Success !**************");
                                 break;
                             case "3" :
-                                System.out.println("Supprimer un evenements");
+                                System.out.println("*****************Supprimer un evenements******************");
+                                System.out.println("Entrer le Id d'evenement a Supprimer : ");
+                                int EventDel=myObj.nextInt();
+                                events.remove(events.get(EventDel));
+                                System.out.println("************* evenement Supprimer Avec Success !**************");
                                 break;
                             case "4" :
-                                System.out.println("Afficher la liste des événements ");
+                                System.out.println("*************liste des événements **************");
+                                for (Event eve : events) {
+
+                                        System.out.println(eve.getName());
+
+
+                                };
                                 break;
                              case "5" :
                                 System.out.println("Rechercher des événements par critère (date, lieu, type) : ");
