@@ -21,7 +21,7 @@ public class Main {
         ArrayList<Event> events = new ArrayList<>();
         ArrayList<Participant> participants = new ArrayList<>();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Admin admin = new Admin("admin",5,"pass");
+        Admin admin = new Admin("admin","pass");
         try{
             Event event = new Event("Event1","paris",dateFormat.parse("8/8/8"),dateFormat.parse("8/5/8"),EventType.CONFERENCES,admin);
             Event event2 = new Event("Event2","paris",dateFormat.parse("8/8/8"),dateFormat.parse("8/5/8"),EventType.CONFERENCES,admin);
@@ -62,7 +62,7 @@ public class Main {
                             System.out.println("************** Entrer Votre Mot de passe : ***********");
                             String AdminPass = myObj.nextLine();
                             currentAdmin.setPassword(AdminPass);
-                            currentAdmin.setId(1);
+//                            currentAdmin.setId(1);
                             System.out.println("************ Admin "+currentAdmin.getUsername()+" registered Succefully ! **************");
                         }
                         clearConsole();
@@ -169,7 +169,7 @@ public class Main {
                             case "3" :
                                 System.out.println("***************** Supprimer un evenements  ******************");
                                 System.out.println("Entrer le Id d'evenement a Supprimer : ");
-                                int EventDel=myObj.nextInt();
+                                int EventDel=myObj.nextInt()-1;
                                 events.remove(events.get(EventDel));
                                 System.out.println("************* evenement Supprimer Avec Success !**************");
                                 break;
@@ -270,6 +270,35 @@ public class Main {
 
                             case "6":
                                 System.out.println("Ajouter un participant :");
+
+                                System.out.print("Entrez le nom du Participant : ");
+                                String username = myObj.nextLine();
+
+
+                                System.out.print("Entrez le mot de passe : ");
+                                String password = myObj.nextLine();
+
+                                System.out.print("Entrez l'adresse : ");
+                                String address = myObj.nextLine();
+
+                                int age = 0;
+                                while (true) {
+                                    System.out.print("Entrez l'âge (numéro entier) : ");
+                                    if (myObj.hasNextInt()) {
+                                        age = myObj.nextInt();
+                                        myObj.nextLine();
+                                        break;
+                                    } else {
+                                        System.out.println("Âge invalide, veuillez entrer un numéro entier.");
+                                        myObj.next();
+                                    }
+                                }
+
+                                // Create and add the new participant
+                                Participant newParticipant = new Participant(username, password, address, age);
+                                participants.add(newParticipant);
+                                System.out.println("Participant ajouté avec succès : " + newParticipant);
+
                                 break;
                             case "7":
                                 System.out.println("Modifier un participant");
@@ -307,7 +336,7 @@ public class Main {
                             System.out.println("************** Entrer Votre address : ***********");
                             String PartAdr = myObj.nextLine();
                             currentParticipant.setAddress(PartAdr);
-                            currentParticipant.setId(participants.size());
+//                            currentParticipant.setId(participants.size());
                             participants.add(currentParticipant);
                             System.out.println("************ Participant "+currentParticipant.getUsername()+" registered Succefully ! **************");
                         }
@@ -372,7 +401,7 @@ public class Main {
                                   } else {
                                       System.out.println("ID invalide. Veuillez essayer de nouveau.");
                                   }
-                              } while (myObj.nextInt()-1 != 0);
+                              } while (myObj.nextInt() != 0);
                               break;
                       }
                     }while(!option.equals("12"));

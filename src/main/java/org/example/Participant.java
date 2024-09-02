@@ -7,8 +7,8 @@ public class Participant extends User{
     private int age;
     private ArrayList<Event> EventList;
     public Participant() {}
-    public Participant(String username, int Id,String password,String address,int age) {
-        super(username, Id,password);
+    public Participant(String username,String password,String address,int age) {
+        super(username,password);
         this.age=age;
         this.address=address;
         this.EventList = new ArrayList<>();

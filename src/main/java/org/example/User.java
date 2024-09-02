@@ -4,12 +4,15 @@ public class User {
     protected int Id;
     protected String username;
     protected String password;
+    public static int counter=1;
 
-    public User(String username, int id,String password) {
+
+    public User(String username,String password) {
         System.out.println("Parent here");
         this.username = username;
         this.password=password;
-        Id = id;
+        Id = counter;
+        counter++;
     }
 
     public String getPassword() {
