@@ -3,13 +3,35 @@ package org.example;
 import java.util.ArrayList;
 
 public class Participant extends User{
+    private String address;
+    private int age;
     private ArrayList<Event> EventList;
     public Participant() {}
-    public Participant(String username, int Id) {
-        super(username, Id);
+    public Participant(String username, int Id,String password,String address,int age) {
+        super(username, Id,password);
+        this.age=age;
+        this.address=address;
         this.EventList = new ArrayList<>();
+
         System.out.println("Child Participant Class here");
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public void addEvent(Event event){
         this.EventList.add(event);
     }

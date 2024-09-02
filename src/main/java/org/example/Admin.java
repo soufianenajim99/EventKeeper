@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Admin extends User {
     private ArrayList<Event> EventList;
     public Admin() {}
-    public Admin(String username, int Id) {
-        super(username, Id);
+    public Admin(String username, int Id,String password) {
+        super(username, Id,password);
         this.EventList = new ArrayList<>();
         System.out.println(this);
     }
