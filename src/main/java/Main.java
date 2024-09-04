@@ -30,7 +30,7 @@ public class Main {
             events.add(event3);
 
         }catch (ParseException e){
-            System.out.println(e);
+            System.out.println("Error : "+e);
         }
 
         Scanner myObj = new Scanner(System.in);
@@ -148,7 +148,7 @@ public class Main {
                                     System.out.println("************* Modifier un evenement **************");
                                     for (Event eve : events) {
                                         System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-                                    };
+                                    }
                                     System.out.println("Entrer le Id d'evenement a modifier : ");
                                     int EventMod=myObj.nextInt()-1;
                                     myObj.nextLine();
@@ -208,7 +208,7 @@ public class Main {
 
                                 for (Event eve : events) {
                                     System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-                                };
+                                }
                                 int eventChoice;
                                 do {
                                     System.out.println("Entrez l'ID de l'événement pour voir les détails (ou entrez 0 pour retourner) : ");
@@ -263,7 +263,7 @@ public class Main {
                                         }
                                         break;
 
-                                    case "2": // Search by Location
+                                    case "2":
                                         System.out.println("Entrer le lieu de recherche : ");
                                         String searchLocation = myObj.nextLine();
 
@@ -275,7 +275,7 @@ public class Main {
                                         }
                                         break;
 
-                                    case "3": // Search by Type
+                                    case "3":
                                         System.out.println("Choisir un type d'événement à rechercher (CONFERENCES, SEMINAIRES, REUNIONS, ATELIERS) : ");
                                         String searchTypeStr = myObj.nextLine().toUpperCase();
                                         try {
@@ -343,7 +343,7 @@ public class Main {
                                     break;
                                 }
 
-                                // Display the list of participants
+
                                 for (int i = 0; i < participants.size(); i++) {
                                     System.out.println((i + 1) + ". " + participants.get(i));
                                 }
@@ -408,7 +408,7 @@ public class Main {
                                     break;
                                 }
 
-                                // Afficher la liste des participants
+
                                 for (int i = 0; i < participants.size(); i++) {
                                     System.out.println((i + 1) + ". " + participants.get(i));
                                 }
@@ -430,7 +430,7 @@ public class Main {
                                     }
                                 }
 
-                                // Supprimer le participant sélectionné
+
                                 Participant removedParticipant = participants.remove(participantToDelete);
                                 System.out.println("Participant supprimé avec succès : " + removedParticipant);
                                 break;
@@ -442,7 +442,7 @@ public class Main {
                                     break;
                                 }
 
-                                // Afficher la liste des participants
+
                                 for (int i = 0; i < participants.size(); i++) {
                                     System.out.println((i + 1) + ". " + participants.get(i).getUsername()); // Affiche seulement le nom du participant
                                 }
@@ -464,7 +464,7 @@ public class Main {
                                     }
                                 }
 
-                                // Afficher les détails du participant sélectionné
+
                                 Participant selectedParticipant = participants.get(participantIndexToView);
                                 System.out.println("Détails du participant :");
                                 System.out.println("Nom : " + selectedParticipant.getUsername());
@@ -534,7 +534,7 @@ public class Main {
                         System.out.println("Enter Participant password:");
                         String participantPassword = myObj.nextLine();
 
-                        // Check if the participant exists
+
                         boolean isParticipantFound = false;
                         for (Participant participant : participants) {
                             if (participant.getUsername().equals(participantUsername) && participant.getPassword().equals(participantPassword)) {
@@ -572,7 +572,7 @@ public class Main {
                               System.out.println("************* liste des événements **************");
                               for (Event eve : events) {
                                   System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-                              };
+                              }
                               int eventChoice;
                               do {
                                   System.out.println("Entrez l'ID de l'événement pour voir les détails (ou entrez 0 pour retourner) : ");
@@ -599,7 +599,7 @@ public class Main {
                               System.out.println("************* liste des événements **************");
                               for (Event eve : events) {
                                   System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-                              };
+                              }
 
                               do {
                                   System.out.println("Entrez l'ID de l'événement pour Inscrire a cet evenement (ou entrez 0 pour retourner) : ");
@@ -662,7 +662,7 @@ public class Main {
 
                               String searchOption = myObj.nextLine();
                               switch (searchOption) {
-                                  case "1": // Search by Date
+                                  case "1":
                                       try {
                                           System.out.println("Entrer la Date de recherche (dd/MM/yyyy) : ");
                                           String searchDate = myObj.nextLine();
@@ -720,7 +720,7 @@ public class Main {
                               case "6":
                                   System.out.println("***** " + currentParticipant.getUsername() + " Disconnected ************");
                                   currentParticipant= new Participant();
-//                                  currentParticipant = null;
+
                                   System.out.println("***** " + currentParticipant.getUsername() + " ************");
                                   name = "0";
                                   continue outerswitch;
