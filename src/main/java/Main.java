@@ -9,8 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
@@ -41,7 +40,6 @@ public class Main {
 
         outerswitch:
         do{
-//            System.out.println(currentAdmin.username);
             System.out.println("Sign in as : ");
             System.out.println("1) Administrator: ");
             System.out.println("2) Participant : ");
@@ -626,13 +624,7 @@ public class Main {
                               break;
                               case "3":
                                   System.out.println("************* liste des événements auquelle je suis inscrit  **************");
-//                                  for (Event eve : events) {
-//                                      for (Participant part : eve.getParticipants()){
-//                                          if(part == currentParticipant){
-//                                              System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-//                                          }
-//                                      }
-//                                  };
+
                                   for (Event eve: currentParticipant.getEventList()){
                                       System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
                                   }
@@ -640,13 +632,6 @@ public class Main {
                               break;
                               case "4":
                                   System.out.println("************* liste des événements auquelle je suis inscrit  **************");
-//                                  for (Event eve : events) {
-//                                      for (Participant part : eve.getParticipants()){
-//                                          if(part == currentParticipant){
-//                                              System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
-//                                          }
-//                                      }
-//                                  };
                                   for (Event eve: currentParticipant.getEventList()){
                                       System.out.println("********** Id : " +eve.getId() +") "+eve.getName());
                                   }
@@ -749,33 +734,7 @@ public class Main {
             }
         }while(!(name.equals("1") || name.equals("2")));
 
-        System.out.println("here's the outer 2");
-
-//        Participant p1 = new Participant("pa1",456);
-//        Participant p2 = new Participant("pa2",453);
-//        Participant p3 = new Participant("pa3",454);
-//        Participant p4 = new Participant("pa4",455);
-//        event.addParticipant(p1);
-//        event.addParticipant(p2);
-//        event.addParticipant(p3);
-//        event.addParticipant(p4);
-//        event.addParticipant(p4);
-//        p1.addEvent(event);
-//        p1.addEvent(event2);
-//        p1.addEvent(event3);
-
-//        System.out.println("*************************EventList*******************");
-//        System.out.println(event);
-//        System.out.println("*************************ParticipantInfo*************");
-//        System.out.println(p1);
-//        User user1 = new User("marco",45);
-//        Admin admin1 = new Admin("sam",78);
-//        System.out.println(admin1.getUsername());
-//        System.out.println(user1);
 
     }
-    public static void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
+
 }
