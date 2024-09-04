@@ -3,12 +3,26 @@ package org.example;
 public class User {
     protected int Id;
     protected String username;
+    protected String password;
+    public static int counter=1;
 
-    public User(String username, int id) {
-        System.out.println("Parent here");
+
+    public User(String username,String password) {
+
         this.username = username;
-        Id = id;
+        this.password=password;
+        Id = counter;
+        counter++;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public User() {
     }
     public int getId() {

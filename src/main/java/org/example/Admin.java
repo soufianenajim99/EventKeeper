@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Admin extends User {
     private ArrayList<Event> EventList;
     public Admin() {}
-    public Admin(String username, int Id) {
-        super(username, Id);
+    public Admin(String username,String password) {
+        super(username,password);
         this.EventList = new ArrayList<>();
-        System.out.println(this);
+
     }
 
 

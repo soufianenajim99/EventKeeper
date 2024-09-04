@@ -1,5 +1,7 @@
 package org.example;
 
+import Enums.EventType;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,24 +9,30 @@ public class Event {
 
     private int Id;
     private String Name;
-    private String StartDate;
-    private String EndDate;
+    public static int counter=1;
+    private Date StartDate;
+    private Date EndDate;
+    private EventType EventType;
+    private String Localisation;
     private Admin admin;
     private ArrayList<Participant> participants;
 
 
-    public Event(int id, String name, Admin admin, String startDate, String endDate) {
-        Id = id;
+    public Event(String name,String Localisation, Date startDate, Date endDate, Enums.EventType eventType, Admin admin) {
+        this();
+        Id = counter;
         Name = name;
-        this.admin=admin;
         StartDate = startDate;
         EndDate = endDate;
-        this.participants = new ArrayList<>();
-     
+        EventType = eventType;
+        this.Localisation = Localisation;
+        this.admin = admin;
+        counter++;
+
     }
 
     public Event() {
-        this.participants = new ArrayList<>(); 
+        this.participants = new ArrayList<>();
     }
 
     public Admin getAdmin() {
@@ -63,20 +71,36 @@ public class Event {
         Name = name;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return StartDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         StartDate = startDate;
     }
 
-    public String getEndDate() {
+    public Date getEndDate() {
         return EndDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(Date endDate) {
         EndDate = endDate;
+    }
+
+    public Enums.EventType getEventType() {
+        return EventType;
+    }
+
+    public void setEventType(Enums.EventType eventType) {
+        EventType = eventType;
+    }
+
+    public String getLocalisation() {
+        return Localisation;
+    }
+
+    public void setLocalisation(String localisation) {
+        Localisation = localisation;
     }
 
     @Override
@@ -88,6 +112,7 @@ public class Event {
                 ", Admin='" + admin + '\'' +
                 ", StartDate=" + StartDate +
                 ", EndDate=" + EndDate +
+                ", Localisation=" + Localisation +
                  ", has " + participants.size() +" Participant ";
           for(int i=0; i< participants.size(); i++){
           result = result + "\n Participants "+(i+1)+" Username :  "+participants.get(i).getUsername();
