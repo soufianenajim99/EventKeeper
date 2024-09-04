@@ -8,7 +8,7 @@ public class User {
 
 
     public User(String username,String password) {
-        System.out.println("Parent here");
+
         this.username = username;
         this.password=password;
         Id = counter;

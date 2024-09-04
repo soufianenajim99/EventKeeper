@@ -6,13 +6,14 @@ public class Participant extends User{
     private String address;
     private int age;
     private ArrayList<Event> EventList;
-    public Participant() {}
+    public Participant() {
+        this.EventList = new ArrayList<>();
+    }
     public Participant(String username,String password,String address,int age) {
         super(username,password);
         this.age=age;
         this.address=address;
         this.EventList = new ArrayList<>();
-
         System.out.println("Child Participant Class here");
     }
 
@@ -37,6 +38,14 @@ public class Participant extends User{
     }
     public void deleteEvent(Event event){
         this.EventList.remove(event);
+    }
+
+    public ArrayList<Event> getEventList() {
+        return EventList;
+    }
+
+    public void setEventList(ArrayList<Event> eventList) {
+        EventList = eventList;
     }
 
     @Override
